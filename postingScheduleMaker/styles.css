@@ -1,19 +1,19 @@
 textarea{
-    width: 500px;
-    height: 500px;
+    width: 40%;
+    height: 100%;
 }
 
 #eventInput{
-    width: 1000px;
+    width: 80%;
     height: 25px;
 }
 
 #namesInput{
-    width: 500px;
+    width: 40%;
     height: 50px;
 }
 
 #dateInput{
-    width: 500px;
+    width: 40%;
     height: 50px;
 }
