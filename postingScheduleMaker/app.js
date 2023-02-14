@@ -27,6 +27,8 @@ function makeSchedule(eventName, dates, posters){
     schedule += "Event Title: " + eventName + "\n" +
         "Schedule: \n";
 
+    shuffleArray(posters)
+
     for (let i = 0; i < dates.length; i++){
         // crate an emty string for each line of posters
         dailyPosters.push("");
@@ -89,6 +91,15 @@ function displayOutput(){
     scheduleToSlackCommands(schedule)
     slackbotCommandsOutput.innerHTML = commands
     scheduleOutput.innerHTML = schedule;
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 let eventNameInput = document.getElementById("eventInput")
