@@ -1,0 +1,26 @@
+td {
+    border:solid white;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+h3{
+    text-align: center;
+    color: white;
+}
+table{
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+
