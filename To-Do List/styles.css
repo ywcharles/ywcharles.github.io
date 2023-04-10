@@ -1,0 +1,81 @@
+body {
+    background-color: #c0aceb;
+}
+
+h1{
+    font-family: "Comic Sans MS";
+    font-size: xx-large;
+    text-align: center;
+}
+
+hr{
+    width: 80%;
+}
+
+input[type=text]{
+    position: relative;
+    left: 10%;
+    height: 5%;
+    width: 55%;
+    border-radius: 5%;
+    font-family: "Comic Sans MS";
+}
+
+.task{
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: dimgrey;
+    padding: 10px;
+    position: relative;
+    left: 10%;
+    width: 73%;
+}
+
+.delete{
+    background-color: #eea2a2;
+    position: relative;
+    float: right;
+    border-radius: 100%;
+    border-style: none;
+}
+
+.delete:hover{
+    background-color: indianred;
+}
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 80%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    padding: 25px;
+    padding-top: 10px;
+    position: absolute;
+    top: 10%;
+    left:35%;
+    width: 30%;
+}
+
+#add-box{
+    display: flex;
+    flex-direction: row;
+}
+
+#add{
+    font-family: "Comic Sans MS";
+    position: relative;
+    left: 10%;
+    height: 6%;
+    width: 20%;
+    background-color: #c0aceb;
+    border-radius: 5px;
+    border-color: whitesmoke;
+}
+
+#add:hover{
+    background-color: #aa8deb;
+}
+
+
