@@ -72,10 +72,6 @@ function scheduleToIndividualSlackCommands(schedule, eventName){
         names = names.split(" ")
         dailySchedule[i][1] = names
 
-        // create a command for each name
-        for (let j = 0; j < names.length; j++){
-            text += `/remind ${names[j]} \"Please make a post about ${eventName} today. 11am-2pm are recommended.\" at ${remindTime} ${dailySchedule[i][0]} \n`
-        }
     }
     return text;
 }
@@ -86,7 +82,7 @@ function scheduleToSlackCommands(dates, eventName){
 
     // create a command for each name
     for (let j = 0; j < dates.length; j++){
-        text += `/remind @channel \"Please make a post about ${eventName} today. 11am-2pm are recommended.\" at ${remindTime} ${dates[j]} \n`
+        text += `/remind @channel \"Please check ${eventName} posting schedule. 11am-2pm are recommended.\" at ${remindTime} ${dates[j]} \n`
     }
     return text;
 }
