@@ -56,7 +56,7 @@ function makeSchedule(eventName, dates, posters){
     return schedule
 }
 
-function scheduleToIndividualSlackCommands(schedule, eventName){
+function scheduleToSlackCommands(schedule, eventName){
     let remindTime = "10am";
     let dailySchedule = schedule.split("\n");
     let text = "";
@@ -72,17 +72,8 @@ function scheduleToIndividualSlackCommands(schedule, eventName){
         names = names.split(" ")
         dailySchedule[i][1] = names
 
-    }
-    return text;
-}
-
-function scheduleToSlackCommands(dates, eventName){
-    let remindTime = "10am";
-    let text = "";
-
-    // create a command for each name
-    for (let j = 0; j < dates.length; j++){
-        text += `/remind @channel \"Please check ${eventName} posting schedule. 11am-2pm are recommended.\" at ${remindTime} ${dates[j]} \n`
+        // create a command for each date
+        text += `/remind @channel \" ${names.map((name => ' ' + name + ' '))}Please make a post about ${eventName} today. 11am-2pm are recommended.\" at ${remindTime} ${dailySchedule[i][0]} \n`
     }
     return text;
 }
@@ -94,7 +85,7 @@ function displayOutput(){
     let scheduleOutput = document.getElementById("scheduleOutput");
     let slackbotCommandsOutput = document.getElementById("slackMessagesOutput") ;
     let schedule = makeSchedule(eventName, dates, posters);
-    let commands = scheduleToSlackCommands(dates,eventName)
+    let commands = scheduleToSlackCommands(schedule,eventName)
     scheduleToSlackCommands(schedule)
     slackbotCommandsOutput.innerHTML = commands
     scheduleOutput.innerHTML = schedule;
@@ -103,7 +94,7 @@ function displayOutput(){
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
+        var temp = array[i]; 
         array[i] = array[j];
         array[j] = temp;
     }
